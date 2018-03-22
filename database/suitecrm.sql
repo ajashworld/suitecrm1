@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2018 at 06:25 AM
+-- Generation Time: Mar 22, 2018 at 10:31 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -4483,8 +4483,9 @@ CREATE TABLE `registration` (
 INSERT INTO `registration` (`id`, `first_name`, `last_name`, `display_name`, `email`, `password`, `otp`) VALUES
 (1, 'AJay', 'Singh', 'AJ', 'ajay@zenwebnet.com', '123', '75467'),
 (3, 'Vipin', 'Chandra', 'VC', 'vipin@zenwebnet.com', '123456', '83116'),
-(8, 'ajay', 'Singh', 'aj', 'ajay@blueastral.com', '123', '38098'),
-(10, 'Manish', 'Panchal', 'Mani', 'manish@blueastral.com', '123', '');
+(8, 'ajay', 'singh', 'aj', 'ajay@blueastral.com', '123', '67187'),
+(10, 'Manish', 'Panchal', 'Mani', 'manish@blueastral.com', '123', ''),
+(11, 'Nisha', 'Singh', 'Nis', 'nisha@blueastral.com', '123', '87074');
 
 -- --------------------------------------------------------
 
@@ -5265,6 +5266,29 @@ CREATE TABLE `spots` (
   `config` longtext,
   `type` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `fathername` varchar(255) NOT NULL,
+  `contactnumber` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `pincode` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `name`, `fathername`, `contactnumber`, `city`, `state`, `pincode`) VALUES
+(10, 'Sohan', 'Aakash', '3256987541', 'Pune', 'Maharashtra', '123598');
 
 -- --------------------------------------------------------
 
@@ -7303,6 +7327,12 @@ ALTER TABLE `spots`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sugarfeed`
 --
 ALTER TABLE `sugarfeed`
@@ -7508,6 +7538,12 @@ ALTER TABLE `prospects`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
